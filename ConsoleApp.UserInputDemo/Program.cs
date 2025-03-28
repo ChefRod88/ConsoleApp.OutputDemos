@@ -1,11 +1,11 @@
 ﻿// Declare variables
-string firstName = string.Empty;
-string lastName = string.Empty;
-int age = 0;
+string? firstName = string.Empty;
+string? lastName = string.Empty;
+int age;
 int retirementAge = 65;
-decimal salary = 0;
-char gender = char.MinValue;
-bool working = false;
+decimal salary;
+char gender;
+bool working;
 
 // Prompt the user for input
 Console.Write("Please enter your first name: ");
@@ -18,7 +18,7 @@ Console.Write("Please enter your age: ");
 age = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Please enter your salary: ");
-salary = decimal.Parse(Console.ReadLine());
+salary = Convert.ToDecimal(Console.ReadLine());
 
 Console.Write("Please enter your gender (M or F): ");
 gender = Convert.ToChar(Console.ReadLine());
