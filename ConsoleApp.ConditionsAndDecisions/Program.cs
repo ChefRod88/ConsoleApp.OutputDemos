@@ -59,3 +59,14 @@ else
 
     Console.WriteLine("****************** Complex Simple IF...ELSE Results End *****************");
 
+// Tenary operator - Used to assign a value to a variable based on a condition 
+Console.WriteLine("****************** Tenary Operator Result *****************");
+
+string passStatus = grade < 50 ? "Fail" : "Pass";
+Console.WriteLine($"Student status is: {passStatus}");
+
+
+Console.WriteLine("****************** Tenary Operator Result *****************");
+
+// The rest of the applicatiom
+Console.WriteLine("Thank you for using this program");
