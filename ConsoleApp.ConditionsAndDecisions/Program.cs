@@ -1,13 +1,16 @@
 ﻿
 // Prompt for input
 Console.Write("Please enter student's grade: ");
+//Global variable/ global scope
 int grade = Convert.ToInt32(Console.ReadLine());
+
 
 // Decide to print pas or fail on input
 Console.WriteLine("****************** Simple IF Results *****************");
 if(grade > 50)
 {
     Console.WriteLine("Student has passed");
+    int gradeAfterBonus = grade + 10;
 }
 else
 {
@@ -35,29 +38,36 @@ if (grade < 0 || grade > 100)
 else if (grade < 50)
 {
     Console.WriteLine("Student has failed - F");
+
 }
 else if (grade >= 50 && grade <= 64 )
 {
     Console.WriteLine("C-");
+
 }
 else if (grade >= 65 && grade <= 74)
 {
     Console.WriteLine("C");
+
 }
 else if (grade >= 75 && grade <= 84)
 {
     Console.WriteLine("B");
+
 }
 else if (grade >= 85 && grade <= 100)
 {
     Console.WriteLine("A - Good job");
+
 }
 else
 {
     Console.WriteLine("This is an invald value");
 }
+int gradeAfterBonus = grade >= 0 && grade <= 100 ? grade += 10 : 0 ; // tenary operator
+Console.WriteLine($"Grade after bonus: {gradeAfterBonus}");
 
-    Console.WriteLine("****************** Complex Simple IF...ELSE Results End *****************");
+Console.WriteLine("****************** Complex Simple IF...ELSE Results End *****************");
 
 // Tenary operator - Used to assign a value to a variable based on a condition 
 Console.WriteLine("****************** Tenary Operator Result *****************");
