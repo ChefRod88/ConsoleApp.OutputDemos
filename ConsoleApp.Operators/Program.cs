@@ -4,10 +4,8 @@
 Console.Write("Please enter the first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-int num2 = 0;
 Console.Write("Please enter the second number: ");
-string? numberEntered = Console.ReadLine();
-num2 = Convert.ToInt32(numberEntered);
+int num2 = Convert.ToInt32(Console.ReadLine());
 /*
  Math Operations and operators
  */
@@ -57,5 +55,30 @@ Console.WriteLine($"isLessThanOrEqualTo: {isGreaterThanOrEqualTo} ");
 Console.WriteLine($"isNotEqual: {isNotEqual} ");
 Console.WriteLine("***************************** End Logic Results ******************************");
 
+
+/*
+    Assignment Operations and Operators
+ */
+//int randomValue = 5;
+//int increaseValue = num1 + 5;
+
+//num1 = num1 + 5;
+
+
+
+Console.WriteLine("**************************************** Assignment Results ***********************");
+Console.WriteLine();
+num1 += 5;
+Console.WriteLine($"Num 1 increased by 5: {num1}");
+num1 -= 3;
+Console.WriteLine($"Num 1 reduced by 3: {num1}");
+num1 /= 2;
+Console.WriteLine($"Num 1 divided by 2: {num1}");
+num1 %= 2;
+Console.WriteLine($"Num 1 mod by 2: {num1}");
+num1 *= 10;
+Console.WriteLine($"Num 1 multiply by 3: {num1}");
+Console.WriteLine();
+Console.WriteLine("**************************************** End Assignments Results ***********************");
 
 
