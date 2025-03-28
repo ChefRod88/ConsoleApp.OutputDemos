@@ -10,7 +10,6 @@ Console.WriteLine("****************** Simple IF Results *****************");
 if(grade > 50)
 {
     Console.WriteLine("Student has passed");
-    int gradeAfterBonus = grade + 10;
 }
 else
 {
