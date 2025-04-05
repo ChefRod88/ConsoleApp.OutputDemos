@@ -17,5 +17,5 @@ int numberOfTimes = Convert.ToInt32(Console.ReadLine());
 
 for (int i = 0; i < numberOfTimes; i++)
 {
-    Console.WriteLine($"Hello, World {i}"); numberOfTimes
+    Console.WriteLine($"Hello, World {i}"); 
 }
