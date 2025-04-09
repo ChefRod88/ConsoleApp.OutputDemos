@@ -51,4 +51,59 @@ string newString = $"{s1} {s2} ghghggggjhgjhg";
 string newString2 = s1 + $"{s1} {s2} ghghggggjhgjhg";
 string newString3 = s1 + String.Format("Literal string {0}{1}", s1, s2);
 
+/* String manipulation methods and properties. Sometimes its just assesment */
+
+// Null or empty checks 
+// find the length of the string
+
+Console.WriteLine($"{nameof(s1)} has a length of {s1.Length}");
+Console.WriteLine($"{nameof(s5)} has a length of {s5.Length}");
+Console.WriteLine($"{nameof(s6)} has a length of {s6.Length}");
+
+
+// if (string.IsNullOrEmpty(s4) == false)
+
+if ( !string.IsNullOrEmpty( s4 ))
+{
+    Console.WriteLine($"{nameof(s4)} has a length of {s4.Length}");
+   
+}
+
+if (!string.IsNullOrEmpty(s5))
+{
+    Console.WriteLine($"{nameof(s5)} has a length of {s5.Length}");
+
+}
+// Substrings
+string subString = s1.Substring(5);
+Console.WriteLine($"{nameof(subString)} : {subString}");
+subString = s1.Substring(5, 5);
+Console.WriteLine($"{nameof(subString)} : {subString}");
+
+// Splitting string
+
+var splitStrings = s2.Split(' ');
+for (int i = 0; i < splitStrings.Length; i++) 
+{
+    Console.WriteLine(splitStrings[i]);
+}
+// Replace
+
+string replacements = s1.Replace('s', 'V');
+Console.WriteLine($"{nameof(replacements)} : {replacements}");
+
+string replacements2 = s1.Replace("string","chicken");
+Console.WriteLine($"{nameof(replacements2)} : {replacements2}");
+
+// Convert to string
+string salary = 100000.00.ToString();
+
+// Changing Formatting
+
+Console.WriteLine($"{nameof(salary)} : {salary:C}");
+
+
+
+
+
 
