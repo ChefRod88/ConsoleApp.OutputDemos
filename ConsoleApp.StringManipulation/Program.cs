@@ -97,10 +97,13 @@ Console.WriteLine($"{nameof(replacements2)} : {replacements2}");
 
 // Convert to string
 string salary = 100000.00.ToString();
+int value = 100000;
 
 // Changing Formatting
 
 Console.WriteLine($"{nameof(salary)} : {salary:C}");
+Console.WriteLine(nameof(salary)+ ": " +  value.ToString("C"));
+
 
 
 
