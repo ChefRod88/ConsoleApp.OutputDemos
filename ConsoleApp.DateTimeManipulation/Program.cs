@@ -1,22 +1,24 @@
-﻿Console.WriteLine("********** - DateTime manipulation - **********");
+﻿//Console.WriteLine("********** - DateTime manipulation - **********");
 
 // Empty DateTime
+
+using System.Globalization;
 
 DateTime dateTime = new DateTime();
 
 // Create a DateTime from date and time
 
-var dateOfBirth = new DateTime(1988,8,16);
-Console.WriteLine($"My DOB is {dateOfBirth}");
+//var dateOfBirth = new DateTime(1988,8,16);
+//Console.WriteLine($"My DOB is {dateOfBirth}");
 
-var exactDateOfBirth = new DateTime(1988, 8, 16, 14, 45, 45);
-Console.WriteLine($"My DOB is {exactDateOfBirth}");
+//var exactDateOfBirth = new DateTime(1988, 8, 16, 14, 45, 45);
+//Console.WriteLine($"My DOB is {exactDateOfBirth}");
 
-Console.WriteLine($"Day of the week: {dateOfBirth.DayOfWeek}");
-Console.WriteLine($"Day of the year {dateOfBirth.DayOfYear}");
-Console.WriteLine($"Time of day {exactDateOfBirth.TimeOfDay}");
-Console.WriteLine($"Tick: {exactDateOfBirth.Ticks}");
-Console.WriteLine($"Kind: {exactDateOfBirth.Kind}");
+//Console.WriteLine($"Day of the week: {dateOfBirth.DayOfWeek}");
+//Console.WriteLine($"Day of the year {dateOfBirth.DayOfYear}");
+//Console.WriteLine($"Time of day {exactDateOfBirth.TimeOfDay}");
+//Console.WriteLine($"Tick: {exactDateOfBirth.Ticks}");
+//Console.WriteLine($"Kind: {exactDateOfBirth.Kind}");
 
 
 
@@ -54,25 +56,47 @@ DateTime now = DateTime.Now;
 //Console.WriteLine("********** - DateTime Offset manipulation - **********");
 // UTC Coordinated Univeersal Time 
 
-var utcNow = DateTime.UtcNow;
-Console.WriteLine($"Now Date Time: {now}");
-Console.WriteLine($"UTC Now Date Time: {utcNow}");
+//var utcNow = DateTime.UtcNow;
+//Console.WriteLine($"Now Date Time: {now}");
+//Console.WriteLine($"UTC Now Date Time: {utcNow}");
 
-var tz = TimeZoneInfo.Local.GetUtcOffset( utcNow );
-Console.WriteLine($"user Time Zone: {tz}");
+//var tz = TimeZoneInfo.Local.GetUtcOffset( utcNow );
+//Console.WriteLine($"user Time Zone: {tz}");
 
-var dto = new DateTimeOffset(now, tz);
-Console.WriteLine($"{dto}");
-Console.WriteLine($"UTC TOA {dto.UtcDateTime}");
+//var dto = new DateTimeOffset(now, tz);
+//Console.WriteLine($"{dto}");
+//Console.WriteLine($"UTC TOA {dto.UtcDateTime}");
 
-var indiaTz = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
-var indiaDateTime = TimeZoneInfo.ConvertTimeFromUtc(dto.UtcDateTime, indiaTz);
-Console.WriteLine($"Action was completed in India at: {indiaDateTime}");    
+//var indiaTz = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+//var indiaDateTime = TimeZoneInfo.ConvertTimeFromUtc(dto.UtcDateTime, indiaTz);
+//Console.WriteLine($"Action was completed in India at: {indiaDateTime}");    
 
 
 Console.WriteLine("********** - Date only and Time only manipulation - **********");
 
 // DateOnly
 
-// TimeOnly
+var dateOnly = new DateOnly(1988, 08, 16);
+var nextDay = dateOnly.AddDays(1);
+var previousDay = dateOnly.AddDays(-1);
+var decadeLater = dateOnly.AddYears(10);
+var lastMonth = dateOnly.AddMonths(-1);
 
+Console.WriteLine($"Date: {dateOnly} ");
+Console.WriteLine($"Next day: {nextDay} ");
+Console.WriteLine($"Previous day: {previousDay} ");
+Console.WriteLine($"Decade Later: {decadeLater} ");
+Console.WriteLine($"Last Month: {lastMonth} ");
+
+var DateOnlyFromDateTime = DateOnly.FromDateTime(now);
+Console.WriteLine($"Date Only From DateTime: {DateOnlyFromDateTime}");
+
+Console.WriteLine("What is your DOB (dd MMM yyyy: ");
+string dobDateOnly = Console.ReadLine();
+
+var theDateOnly = DateOnly.ParseExact(dobDateOnly, "dd MMM yyyy", CultureInfo.InvariantCulture);
+Console.WriteLine($"The Date Only: {theDateOnly}");
+
+// TimeOnly
+var timeNow = TimeOnly.FromDateTime(now);
+Console.WriteLine($"It is now: {timeNow}");
