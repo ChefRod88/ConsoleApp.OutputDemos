@@ -100,3 +100,13 @@ Console.WriteLine($"The Date Only: {theDateOnly}");
 // TimeOnly
 var timeNow = TimeOnly.FromDateTime(now);
 Console.WriteLine($"It is now: {timeNow}");
+
+// Date Comparisons
+
+var date1 = new DateTime(1985, 11, 23);
+var date2 = new DateTime(1975, 11, 23);
+
+Console.WriteLine($" Is '{nameof(date1)}' equal? {date1 == date2}");
+Console.WriteLine($" Is '{nameof(date1)}' equal? {date1.Equals(date2)}");
+Console.WriteLine($" Is {date2} after? {date2} > {date1}");
+Console.WriteLine($" Is {date2} before? {date2} < {date1}");
