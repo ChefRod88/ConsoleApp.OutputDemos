@@ -1,6 +1,8 @@
-﻿
+﻿using System.Security.Cryptography;
 
 // Variable Declarations
+
+
 int choice = 0;
 int num1, num2 = 0;
 
@@ -10,14 +12,7 @@ while (choice != -1)
     try
     {
         // Welcome Message
-        Console.Clear();
-        Console.WriteLine("******** - Welcome to the sample calculator! - ********");
-        Console.WriteLine("Please select an operation (-1 to exit program) ");
-        Console.WriteLine("1. Addition");
-        Console.WriteLine("2. Subtraction");
-        Console.WriteLine("3. Multiplication");
-        Console.WriteLine("4. Division");
-        Console.WriteLine("5. Fibonacci sequence");
+        PrintMenu();
 
         choice = Convert.ToInt32(Console.ReadLine());
 
@@ -32,63 +27,25 @@ while (choice != -1)
         Console.Write("Please enter the second number: ");
         num2 = Convert.ToInt32(Console.ReadLine());
 
-        // Decide which operation is needed based on selected option
-        /*If statements */
-        //if (choice == 1)
-        //{
-        //    /* do addition */
-        //}
-        //else if (choice == 2)
-        //{
-        //    /* subtraction*/
-        //}
-        //else if (choice == 3)
-        //{
-        //    /*Multiplication*/
-        //}
-        //else if (choice == 4)
-        //{
-        //    /*Division*/
-        //}
-        //else
-        //{
-        //    Console.WriteLine("Invalid choice");
-        //}
-        // Prompt for user input
-
-        /* Switch statement */
+        
         int answer = 0;
         switch (choice)
         {
             case 1:
-                answer = num1 + num2;
+                answer = AddNumbers(num1, num2);
                 break;
             case 2:
-                answer = num1 - num2;
+                answer = SubNumbers(num1, num2);
                 break;
             case 3:
-                answer = num1 * num2;
+                answer = ProductNumbers(num1, num2);
                 break;
             case 4:
-                answer = num1 / num2;
+                answer = QuotientNumbers(num1, num2);
                 break;
             case 5:
-                Console.WriteLine("Fibonacci Sequence (first 10 terms):");
-
-                int a = 0, b = 1;
-
-                for (int i = 0; i < 10; i++)
-                {
-                    Console.Write($"{a} ");
-                    int temp = a;
-                    a = b;
-                    b = temp + b;
-                }
-
-                Console.WriteLine(); // for spacing
+                FibonacciSequence();
                 break;
-            default:
-                throw new Exception("Invalid Menu Item Selected.");
         }
 
         // print output 
@@ -109,7 +66,68 @@ while (choice != -1)
     }
 }
 
+
+
 Console.WriteLine("******** - Thank you for using the sample calculator! - ********");
 
 
+// Method Definintions 
+void PrintMenu()
+{
+    Console.Clear();
+    Console.WriteLine("******** - Welcome to the sample calculator! - ********");
+    Console.WriteLine("Please select an operation (-1 to exit program) ");
+    Console.WriteLine("1. Addition");
+    Console.WriteLine("2. Subtraction");
+    Console.WriteLine("3. Multiplication");
+    Console.WriteLine("4. Division");
+    Console.WriteLine("5. Fibonacci sequence");
+}
+
+int QuotientNumbers(int num1, int num2)
+{
+    return num2 / num1;
+}
+
+int ProductNumbers(int num1, int num2)
+{
+    return num1 * num2;
+}
+
+int SubNumbers(int num1, int num2)
+{
+    return num2 - num1;
+}
+
+int AddNumbers(int num1, int num2)
+{
+    return num1 += num2;
+}
+
+void FibonacciSequence()
+{
+    Console.WriteLine("Welcome to the Fibonacci Sequence.");
+
+    Console.WriteLine("Please enter first number:");
+    num1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Please enter second number:");
+    num2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine($"Fibonacci Sequence (first {num2} terms):");
+
+
+
+    int a = num1, b = num2;
+
+    for (int i = 0; i < num2; i++)
+    {
+        Console.Write($"{a} ");
+        int temp = a;
+        a = b;
+        b = temp + b;
+    }
+
+    
+}
 
