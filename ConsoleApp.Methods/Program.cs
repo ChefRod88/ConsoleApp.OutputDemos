@@ -33,23 +33,64 @@ int GetYearDiffWithParams(int year)
     return yearDiff;
 }
 
-// methods with optional parameters
+// methods with optional parameters - parameter is not required...also has a default value
+
+int GetFutureOrPastYear(int numberOfYears = 0)
+{
+    var year = DateTime.Now.AddYears(numberOfYears).Year;
+    return year;
+}
 
 // methods with nullable parameters
 
+void PrintNameNullableParam(string? name, int? count)
+{
+
+    //if (string.IsNullOrEmpty(name))
+    //{
+
+    //    name = " Default Name";
+
+    //}
+
+    //if (!count.HasValue)
+    //{
+    //    count = 1;  
+    //}
+
+    name ??= "Default Name";
+    count ??= 1;
+
+    for (int i = 0; i < count ; i++)
+    {
+        Console.WriteLine(name);
+    }
+}
+
 /* Function Calls */
-PrintName();
+//PrintName();
 
-int fiveYearsAgo =  GetFiveYearsAgo();
-Console.WriteLine("Five Years Ago was : " + fiveYearsAgo);
+//int fiveYearsAgo =  GetFiveYearsAgo();
+//Console.WriteLine("Five Years Ago was : " + fiveYearsAgo);
 
-Console.WriteLine("Enter Your Name");
-string name = Console.ReadLine();
-PrintNameWithParameters(name);
+//Console.WriteLine("Enter Your Name");
+//string name = Console.ReadLine();
+//PrintNameWithParameters(name);
 
-Console.WriteLine("Enter A Year: ");
-int pastYear = Convert.ToInt32(Console.ReadLine());
-int yearsAgo = GetYearDiffWithParams(pastYear);
-Console.WriteLine("This was:  " + yearsAgo + " years ago.");
+//Console.WriteLine("Enter A Year: ");
+//int pastYear = Convert.ToInt32(Console.ReadLine());
+//int yearsAgo = GetYearDiffWithParams(pastYear);
+//Console.WriteLine("This was:  " + yearsAgo + " years ago.");
 
+//Console.WriteLine("Enter number of years in the future or past");
+//int numberOfYears = Convert.ToInt32(Console.ReadLine());
+
+//var pastYear1 = GetFutureOrPastYear();
+//Console.WriteLine("The year is: " + pastYear1);
+
+//var pastYear2 = GetFutureOrPastYear(numberOfYears);
+//Console.WriteLine("The year is: " + pastYear2);
+
+PrintNameNullableParam(null, null);
+PrintNameNullableParam("Chester", 5);
 
