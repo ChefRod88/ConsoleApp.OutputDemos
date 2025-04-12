@@ -10,7 +10,16 @@ void PrintName()
 
 // value returning methods - returns a value after an operation
 
+int GetFiveYearsAgo()
+{ 
+    int year = DateTime.Now.AddYears(-5).Year;
+    return year;
+}
+
+
 // methods with parameters
+
+
 
 // methods with optional parameters
 
@@ -18,3 +27,6 @@ void PrintName()
 
 /* Function Calls */
 PrintName();
+
+int fiveYearsAgo =  GetFiveYearsAgo();
+Console.WriteLine("Five Years Ago was : " + fiveYearsAgo);
