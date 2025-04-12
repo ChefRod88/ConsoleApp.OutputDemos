@@ -49,7 +49,7 @@ void PrintNameNullableParam(string? name, int? count)
     //if (string.IsNullOrEmpty(name))
     //{
 
-    //    name = " Default Name";
+    //    name = " Default Name";               // STANDARD WAY
 
     //}
 
@@ -58,7 +58,7 @@ void PrintNameNullableParam(string? name, int? count)
     //    count = 1;  
     //}
 
-    name ??= "Default Name";
+    name ??= "Default Name";                    // SHORTENED WAY
     count ??= 1;
 
     for (int i = 0; i < count ; i++)
