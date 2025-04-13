@@ -1,5 +1,26 @@
-﻿public class Person
+﻿using System.Security.Cryptography;
+
+public class Person
 {
+    public Person()
+    {
+
+    }
+
+    public Person(string firstname, string lastname, DateOnly dob )
+    {
+        FirstName = firstname;
+        LastName = lastname;
+        DateOfBirth = dob;
+
+    }
+
+    public Person(string firstname, string lastname, string taxNumber)
+    {
+        FirstName=firstname;
+        LastName=lastname;
+        _taxNumber = taxNumber;
+    }
     //Properties/Data Members
     public string FirstName { get; set; }
 
@@ -22,7 +43,22 @@
         Console.WriteLine($"{firstIntial} {secondIntial}");
     }
 
-   
+   public void GenerateTaxNumber()
+    {
+        if ( string.IsNullOrEmpty(_taxNumber ))
+        {
+            _taxNumber = RandomNumberGenerator.GetInt32(100000, 9999999).ToString();
+        }
+        else
+        {
+            Console.WriteLine("Tax number already exists");
+        }
+    }
+
+    public string GetTaxNumber()
+    {
+        return _taxNumber;
+    }
 }
 
 
