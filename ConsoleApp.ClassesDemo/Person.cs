@@ -30,6 +30,7 @@ public class Person
 
     // Field member
     private string _taxNumber;
+    protected string _idNumber = "N/A";
 
     public void PrintFullName()
     {
@@ -39,7 +40,7 @@ public class Person
     public void PrintInitials()
     {
         var firstIntial = FirstName[0];
-        var secondIntial = FirstName[0];
+        var secondIntial = LastName[0];
         Console.WriteLine($"{firstIntial} {secondIntial}");
     }
 
@@ -60,6 +61,11 @@ public class Person
         return _taxNumber;
     }
 
+    public string GetIdNumber()
+    {
+        return _idNumber;
+    }
+
     public int GetAge()
     {
         var age = DateTime.Now.Year - DateOfBirth.Year;
@@ -72,6 +78,13 @@ public class Person
         var age = year - DateOfBirth.Year;
         return age;
 
+    }
+
+    protected string GetRandomNumber()
+    {
+        return RandomNumberGenerator
+                .GetInt32(100000, 9999999)
+                .ToString();
     }
 }
 
