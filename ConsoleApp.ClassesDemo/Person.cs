@@ -59,6 +59,20 @@ public class Person
     {
         return _taxNumber;
     }
+
+    public int GetAge()
+    {
+        var age = DateTime.Now.Year - DateOfBirth.Year;
+        return age;
+
+    }
+
+    public int GetAge(int year)
+    {
+        var age = year - DateOfBirth.Year;
+        return age;
+
+    }
 }
 
 
