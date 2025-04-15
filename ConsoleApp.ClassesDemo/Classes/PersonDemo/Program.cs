@@ -65,7 +65,7 @@ var rectangleArea = rectangle.Area();
 Console.WriteLine($"The Triangle Area is: {rectangleArea} square ft");
 
 Square square = new(40);
-Console.WriteLine($"The Square Area is: {squareArea} square ft");
+//Console.WriteLine($"The Square Area is: {squareArea} square ft");
 
 
 Triangle triangle = new(10,20);

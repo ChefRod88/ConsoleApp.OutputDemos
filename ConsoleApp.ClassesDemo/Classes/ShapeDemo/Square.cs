@@ -1,21 +1,14 @@
 ﻿namespace ConsoleApp.ClassesDemo.Classes.ShapeDemo;
 
-public abstract partial class Polygon
-
+public class Square : Polygon
 {
-    public class Square : Polygon
+    public Square(int width)
     {
-        public Square(int width)
-        {
-           Width = width; 
-        }
-
-        public int Width { get; }
-
-        //public override double Area()
-        //{
-            
-        //    return (int)Math.Pow(Width, 2);
-        //}
+        Width = width;
+    }
+    public override double Area()
+    {
+        // Math.Pow(Width, 2);
+        return Width * Width;
     }
 }

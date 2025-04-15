@@ -1,40 +1,53 @@
-﻿using ConsoleApp.ClassesDemo;
+﻿// See https://aka.ms/new-console-template for more information
+
+using ConsoleApp.ClassesDemo;
 using ConsoleApp.ClassesDemo.Classes.PersonDemo;
-using System.ComponentModel.DataAnnotations;
-using static ConsoleApp.ClassesDemo.Polygon;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using ConsoleApp.ClassesDemo.Classes.ShapeDemo;
+using static ConsoleApp.ClassesDemo.Classes.ShapeDemo.Polygon;
 
-Console.WriteLine("********** - Classes and Objects - **********");
+Console.WriteLine("************* - Classes and Objects - *************");
 
-// Define an object of type Person.
-Person person; // this will be null by default //**1
+// Read more https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers 
+/* Define an object of type Person. this will be null by default. Without the new instance, it will give a null exception if it is used.
+*/
+Person person;
+// person = new Person(); // Can be initialized at another point of the code. 
 
-Person baby = new Person();// **2
-baby.LastName = "Thomas";
+// It is best to define and declare a new object. 
+Person baby = new Person();
+
+// Using the . operator, we can access public properties and methods.
+baby.LastName = "Thompson";
 baby.FirstName = "Theresa";
-baby.DateOfBirth = new DateOnly(2023, 10,16);
-
+baby.DateofBirth = new DateOnly(2023, 10, 29);
 baby.PrintFullName();
 baby.PrintInitials();
 baby.GenerateTaxNumber();
-
 var taxNumber = baby.GetTaxNumber();
-
 Console.WriteLine(taxNumber);
 
-var person1 = new Person("Developer", "One", new DateOnly(2000,10,31));
+// Object declaration using non-default constructors
+var person1 = new Person("Developer", "One", new DateOnly(2000, 10, 31));
 person1.PrintFullName();
 person1.PrintInitials();
 
-var person2 = new Person("Developer", "Two", "7755522");
+var person2 = new Person("Developer", "Two", "741852963");
 person2.PrintFullName();
 person2.PrintInitials();
 person2.GenerateTaxNumber();
+var person2IdNumber = person2.GetIdNumber();
+Console.WriteLine(person2IdNumber);
 
-var teacher = new Teacher(); //**3
-teacher.LastName = "Shawn";
-teacher.FirstName = "Walsh";
-teacher.DateOfBirth = new DateOnly(2023, 10, 16);
+// Using classes derived from the base class
+/*
+ * Objects can be initialized like this alternatively, where the object's properties  are set all at once. 
+ */
+var teacher = new Teacher
+{
+    LastName = "Thompson",
+    FirstName = "Theresa",
+    DateofBirth = new DateOnly(2023, 10, 29)
+};
 
 teacher.PrintFullName();
 teacher.PrintInitials();
@@ -42,50 +55,47 @@ teacher.GenerateTaxNumber();
 var teachertaxNumber = teacher.GetTaxNumber();
 Console.WriteLine(teachertaxNumber);
 teacher.GenerateTeacherIdNumber();
-
-var teacherIdNumber = teacher.GenerateTeacherIdNumber;
+var teacherIdNumber = teacher.GetIdNumber();
 Console.WriteLine(teacherIdNumber);
 
 
-Student student = new (); //**4
-student.LastName = "Thomas";
-student.FirstName = "Ramj";
-student.DateOfBirth = new DateOnly(2023, 10, 16);
-
+Student student = new();
+student.LastName = "Thompson";
+student.FirstName = "Theresa";
+student.DateofBirth = new DateOnly(2023, 10, 29);
 student.PrintFullName();
 student.PrintInitials();
 student.GenerateTaxNumber();
+student.GenerateStudentIdNumber();
 var studentIdNumber = student.GetIdNumber();
 Console.WriteLine(studentIdNumber);
 
-//Polygon polygon = new Polygon();  // compiler error
-Rectangle rectangle = new(10,20);
+
+//Polygon polygon = new Polygon(); // compiler error
+Rectangle rectangle = new(10, 20);
 var rectangleArea = rectangle.Area();
-Console.WriteLine($"The Triangle Area is: {rectangleArea} square ft");
+var rectanglePerimeter = rectangle.Perimeter();
+rectangle.GetShapeName();
+Console.WriteLine($"Rectangle perimeter is: {rectanglePerimeter}");
+Console.WriteLine($"Rectangle area is: {rectangleArea}");
 
-Square square = new(40);
-var squareArea = square.Area();
-Console.WriteLine($"The Square Area is: {squareArea} square ft");
-
-
-Triangle triangle = new(10,20);
-var triangleArea = triangle.Area();
-Console.WriteLine($"The  Area is: {triangleArea} square ft");
+Square square = new(50);
+var sqaureArea = square.Area();
+Console.WriteLine($"Sqaure area is: {sqaureArea}");
 
 
 Cuboid cuboid = new(1, 5, 7);
 var cuboidArea = cuboid.Area();
 var cuboidVolume = cuboid.Volume();
 var cuboidPerimeter = cuboid.Perimeter();
-Console.WriteLine($"Cuboid area is {cuboidArea}");
-Console.WriteLine($"Cuboid volume is {cuboidVolume}");
-Console.WriteLine($"Cuboid perimeter is {cuboidPerimeter}");
+Console.WriteLine($"Cuboid area is: {cuboidArea}");
+Console.WriteLine($"Cuboid volume is: {cuboidVolume}");
+Console.WriteLine($"Cuboid perimeter is: {cuboidPerimeter}");
 
 Sphere sphere = new(7);
 var sphereCircumference = sphere.Circumference();
 var sphereVolume = sphere.Volume();
-Console.WriteLine($"Cuboid area is {sphereCircumference}");
-Console.WriteLine($"Cuboid volume is {sphereVolume}");
-
+Console.WriteLine($"{nameof(Sphere)} volume is: {sphereVolume}");
+Console.WriteLine($"{nameof(Sphere)} Circumference is: {sphereCircumference}");
 
 
