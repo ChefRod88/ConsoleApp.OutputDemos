@@ -1,4 +1,6 @@
 ﻿using ConsoleApp.ClassesDemo;
+using System.ComponentModel.DataAnnotations;
+using static ConsoleApp.ClassesDemo.Polygon;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("********** - Classes and Objects - **********");
@@ -54,4 +56,19 @@ student.PrintInitials();
 student.GenerateTaxNumber();
 var studentIdNumber = student.GetIdNumber();
 Console.WriteLine(studentIdNumber);
+
+//Polygon polygon = new Polygon();  // compiler error
+Rectangle rectangle = new(10,20);
+var rectangleArea = rectangle.Area();
+Console.WriteLine($"The Triangle Area is: {rectangleArea} square ft");
+
+Square square = new(40);
+var squareArea = square.Area();
+Console.WriteLine($"The Square Area is: {squareArea} square ft");
+
+
+Triangle triangle = new(10,20);
+var triangleArea = triangle.Area();
+Console.WriteLine($"The  Area is: {triangleArea} square ft");
+
 
