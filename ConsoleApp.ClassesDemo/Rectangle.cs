@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp.ClassesDemo
 {
-    public class Rectangle : Polygon
+    public class Rectangle : Polygon, I2DShape
     {
         public Rectangle(int width, int length)
         {
@@ -9,9 +9,14 @@
         }
         public int Length { get; set; }
 
-        public override int Area()
+        public override double Area()
         {
             return Length * Width;
+        }
+
+        public double Perimeter()
+        {
+            return (2 * Length) + (2 * Width);
         }
     }
 }

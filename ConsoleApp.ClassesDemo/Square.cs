@@ -8,7 +8,7 @@
             {
                Width = width; 
             }
-            public override int Area()
+            public override double Area()
             {
                 
                 return (int)Math.Pow(Width, 2);

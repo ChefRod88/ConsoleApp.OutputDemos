@@ -10,7 +10,7 @@
         public int Height { get; set; }
         public int Base { get; set; }
 
-        public override int Area()
+        public override double Area()
         {
             return (int)(0.5 * Base * Height);
         }

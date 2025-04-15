@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.ClassesDemo
 {
-    public abstract partial class Polygon
+    public interface I2DShape
     {
-        public int Width { get; set; }
-
-        public abstract double Area();
+        double Perimeter();
     }
 }
+
+
