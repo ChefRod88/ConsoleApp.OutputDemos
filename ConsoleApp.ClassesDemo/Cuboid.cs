@@ -2,11 +2,11 @@
 {
     public class Cuboid : Polygon, I2DShape, I3Dshape
     {
-        public Cuboid(double l, double w, double h)
+        public Cuboid(double length, double width, double height)
         {
-            Length = l;
-            Width = w;
-            Height = h;
+            Length = length;
+            Width = (int)width;
+            Height = height;
         }
         public double Length { get; set; }
 
