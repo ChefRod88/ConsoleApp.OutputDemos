@@ -1,5 +1,7 @@
 ﻿using ConsoleApp.ClassesDemo;
+using ConsoleApp.ClassesDemo.Classes.PersonDemo;
 using System.ComponentModel.DataAnnotations;
+using static ConsoleApp.ClassesDemo.Classes.ShapeDemo.Polygon;
 using static ConsoleApp.ClassesDemo.Polygon;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -63,7 +65,6 @@ var rectangleArea = rectangle.Area();
 Console.WriteLine($"The Triangle Area is: {rectangleArea} square ft");
 
 Square square = new(40);
-var squareArea = square.Area();
 Console.WriteLine($"The Square Area is: {squareArea} square ft");
 
 
