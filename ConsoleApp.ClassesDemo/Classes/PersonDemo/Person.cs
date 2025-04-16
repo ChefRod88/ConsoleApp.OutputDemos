@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 
 namespace ConsoleApp.ClassesDemo.Classes.PersonDemo;
-public class Person
+public partial class Person
 {
     public Person()
     {
@@ -16,12 +16,7 @@ public class Person
 
     }
 
-    public Person(string firstname, string lastname, string taxNumber)
-    {
-        FirstName=firstname;
-        LastName=lastname;
-        _taxNumber = taxNumber;
-    }
+    
     //Properties/Data Members
     public string FirstName { get; set; }
 
@@ -67,19 +62,7 @@ public class Person
         return _idNumber;
     }
 
-    public int GetAge()
-    {
-        var age = DateTime.Now.Year - DateOfBirth.Year;
-        return age;
-
-    }
-
-    public int GetAge(int year)
-    {
-        var age = year - DateOfBirth.Year;
-        return age;
-
-    }
+    
 
     protected string GetRandomNumber()
     {

@@ -19,7 +19,7 @@ Person baby = new Person();
 // Using the . operator, we can access public properties and methods.
 baby.LastName = "Thompson";
 baby.FirstName = "Theresa";
-baby.DateofBirth = new DateOnly(2023, 10, 29);
+baby.DateOfBirth = new DateOnly(2023, 10, 29);
 baby.PrintFullName();
 baby.PrintInitials();
 baby.GenerateTaxNumber();
@@ -46,7 +46,7 @@ var teacher = new Teacher
 {
     LastName = "Thompson",
     FirstName = "Theresa",
-    DateofBirth = new DateOnly(2023, 10, 29)
+    DateOfBirth = new DateOnly(2023, 10, 29)
 };
 
 teacher.PrintFullName();
@@ -62,7 +62,7 @@ Console.WriteLine(teacherIdNumber);
 Student student = new();
 student.LastName = "Thompson";
 student.FirstName = "Theresa";
-student.DateofBirth = new DateOnly(2023, 10, 29);
+student.DateOfBirth = new DateOnly(2023, 10, 29);
 student.PrintFullName();
 student.PrintInitials();
 student.GenerateTaxNumber();
@@ -75,7 +75,7 @@ Console.WriteLine(studentIdNumber);
 Rectangle rectangle = new(10, 20);
 var rectangleArea = rectangle.Area();
 var rectanglePerimeter = rectangle.Perimeter();
-rectangle.GetShapeName();
+//rectangle.GetShapeName();
 Console.WriteLine($"Rectangle perimeter is: {rectanglePerimeter}");
 Console.WriteLine($"Rectangle area is: {rectangleArea}");
 
