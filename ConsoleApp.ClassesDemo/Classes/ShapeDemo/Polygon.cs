@@ -11,5 +11,10 @@ namespace ConsoleApp.ClassesDemo
         public int Width { get; set; }
 
         public abstract double Area();
+
+        public virtual string GetShapeName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

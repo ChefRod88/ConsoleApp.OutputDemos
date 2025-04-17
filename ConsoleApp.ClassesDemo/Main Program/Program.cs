@@ -3,7 +3,6 @@
 using ConsoleApp.ClassesDemo;
 using ConsoleApp.ClassesDemo.Classes.PersonDemo;
 using ConsoleApp.ClassesDemo.Classes.ShapeDemo;
-using static ConsoleApp.ClassesDemo.Classes.ShapeDemo.Polygon;
 
 Console.WriteLine("************* - Classes and Objects - *************");
 
@@ -75,7 +74,7 @@ Console.WriteLine(studentIdNumber);
 Rectangle rectangle = new(10, 20);
 var rectangleArea = rectangle.Area();
 var rectanglePerimeter = rectangle.Perimeter();
-//rectangle.GetShapeName();
+rectangle.GetShapeName();
 Console.WriteLine($"Rectangle perimeter is: {rectanglePerimeter}");
 Console.WriteLine($"Rectangle area is: {rectangleArea}");
 

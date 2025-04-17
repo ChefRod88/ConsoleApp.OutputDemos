@@ -20,5 +20,10 @@ namespace ConsoleApp.ClassesDemo
         {
             return (2 * Length) + (2 * Width);
         }
+
+        public override string GetShapeName()
+        {
+            return base.GetShapeName();
+        }
     }
 }
