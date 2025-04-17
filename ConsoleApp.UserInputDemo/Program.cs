@@ -1,7 +1,6 @@
 ﻿// Declare variables
 using System.Globalization;
 
-const int retirementAge = 65;
 
 string? firstName = string.Empty;
 string? lastName = string.Empty;
@@ -22,7 +21,6 @@ Console.Write("Please enter your date of birth (dd/mm/yyyy) : ");
 dob = DateOnly.ParseExact(Console.ReadLine(), "dd/mm/yyyy",
     CultureInfo.InvariantCulture);
 
-age = DateTime.Now.Year - dob.Year;
 
 Console.Write("Please enter your salary: ");
 salary = Convert.ToDecimal(Console.ReadLine());
@@ -33,20 +31,26 @@ gender = Convert.ToChar(Console.ReadLine());
 Console.Write("Are you working? (true or false): ");
 working = Convert.ToBoolean(Console.ReadLine());
 
+Person person = new(dob) 
+{ 
+    FirstName = firstName,
+    LastName = lastName,
+    Gender = gender,
+    IsWorking = working,
+    Salary = salary
+};
+
 // Process the data 
-int workingYearsRemaining = retirementAge - age;
-var estimatedRetirementDate = DateTime.Now.AddYears(workingYearsRemaining);
+int workingYearsRemaining = person.GetNumberOfWorkingYearsRemaining();
+var estimatedRetirementDate = person.GetEstimatedRetirementDate();
 
 
 
 // Output the result
-Console.WriteLine($"Full name: {firstName} {lastName}");
-Console.WriteLine($"Age: {age}");
-Console.WriteLine($"Working years remaining: {workingYearsRemaining}");
-Console.WriteLine($"Your Salary is: {salary.ToString("C")}");
-Console.WriteLine($"Your Gender is: {gender}");
-Console.WriteLine($"You are employed: {working}");
+Console.WriteLine($"Full name: {person.ToString()}");
+Console.WriteLine($"Age: {person.GetAge()}");
+Console.WriteLine($"Your Salary is: {person.Salary.ToString("C")}");
+Console.WriteLine($"Your Gender is: {person.Gender}");
+Console.WriteLine($"You are employed: {person.IsWorking}");
 Console.WriteLine($"Number of working years remaining: {workingYearsRemaining}");
-Console.WriteLine($"Estimated Retirement Year: {estimatedRetirementDate.Year}");
-
-
+Console.WriteLine($"Estimated Retirement Year: {estimatedRetirementDate}");

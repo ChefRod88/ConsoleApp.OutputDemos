@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 
 namespace ConsoleApp.ClassesDemo.Classes.PersonDemo;
-public partial class Person
+public  partial class Person
 {
     public Person()
     {
@@ -30,14 +30,16 @@ public partial class Person
 
     public void PrintFullName()
     {
-        Console.WriteLine($"{FirstName} {LastName}");
+        var type = GetType().Name;
+        Console.WriteLine($"{type} name: {FirstName} {LastName}");
     }
 
     public void PrintInitials()
     {
+        var type = GetType().Name;
         var firstIntial = FirstName[0];
         var secondIntial = LastName[0];
-        Console.WriteLine($"{firstIntial} {secondIntial}");
+        Console.WriteLine($"{type} intitials: {firstIntial} {secondIntial}");
     }
 
    public void GenerateTaxNumber()
